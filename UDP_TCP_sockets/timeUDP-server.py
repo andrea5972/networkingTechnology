@@ -8,7 +8,7 @@ PORT = 65432        #Port to listen on (non-privileged ports are > 1023)
 # socket.SOCK_STREAM == TCP Socket
 # socket.SOCK_DGRAM == UDP Socket
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.bind((HOST, PORT))
     s.listen()      #makes a listening socket 
     conn, addr = s.accept()  
